@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>docker | Hexo</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Hexo"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="docker | Hexo"><meta property="og:site_name" content="Hexo"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2022/03/02/docker/"><meta property="og:locale" content="en"><meta name="description" content="Docker Docker介绍​        Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows操作系统的机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。 Docker的安装Windows上安装1https:&amp;#x2F;&amp;#x2F;docs.docker.com&amp;#x2F;e - John Doe - Hexo"><meta property="og:image" content="http://example.com/images/docker01-16462016137481.png"><meta property="article:published_time" content="2022-03-02T06:10:25.000Z"><meta property="article:modified_time" content="2022-03-02T06:13:40.396Z"><meta property="og:updated_time" content="2022-03-02T06:13:40.396Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2022/03/02/docker/">
+
+    <meta name="generator" content="Hexo 4.2.1">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2022/03/02/docker/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2022/03/02/docker/"
+    },
+    "headline": "docker | Hexo",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2022-03-02T06:10:25.000Z",
+    "dateModified": "2022-03-02T06:13:40.396Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "Docker Docker介绍​        Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows操作系统的机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。 Docker的安装Windows上安装1https:&amp;amp;#x2F;&amp;amp;#x2F;docs.docker.com&amp;amp;#x2F;e - John Doe - Hexo"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Hexo</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo&url=http://example.com&pic=http://example.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Hexo&url=http://example.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com&title=docker" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=docker&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://example.com&text=docker" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiklEQVR42u3ayw6DMAxEUf7/p9tVJVrFmTEtMKkuGyReOUhWEjvZHgHHBgIEiCUQ2+R43X97cXf9897ofvVdENmIYdDsHy5A1Y/Y3wURjZh9ZHR9FKAVvHwGxJKI6lwFX4UE8V+IWbA6eBBrItTkpHr+s4FTRlEQlyOcie6R889n2yAuQciktdEhnZaVg7gUoRJep8HRs2UwOj0miAiEE4Cqga+LJCCiEE4DR4on7ZkViNsRnZfcIsksaEHkI1SHpDogp8BS/hCISISbDDuB5gyIdvID4jbEJg53gqIGNVk4AxGP6BTSupNkENkIp5OqBrbZQp0VrCAiEZ2XusXXKohBZCM6i6uziasDtxJiEDGIsuBpbvxxFuNkYIKIQDgJ7qzDqhDtAjuIGER3IW46IIkODcQaiCMbhVXifGhjD4gohFNsdzd2yEELxDIIN4lRC/atIAexJEJNbp3FO6uYCmJJRHeDjyzEgohGdDZrqGKJu1EMRC6iswjnLuJaG0JARCLuPECAABGNeAKXVXm5jTPd9wAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">docker</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2022-03-02</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=docker&url=http://example.com/2022/03/02/docker/&pic=http://example.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=docker&url=http://example.com/2022/03/02/docker/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2022/03/02/docker/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://example.com/2022/03/02/docker/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com/2022/03/02/docker/&title=Hexo" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=Hexo&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2022/03/02/docker/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://example.com/2022/03/02/docker/&text=Hexo" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiklEQVR42u3ayw6DMAxEUf7/p9tVJVrFmTEtMKkuGyReOUhWEjvZHgHHBgIEiCUQ2+R43X97cXf9897ofvVdENmIYdDsHy5A1Y/Y3wURjZh9ZHR9FKAVvHwGxJKI6lwFX4UE8V+IWbA6eBBrItTkpHr+s4FTRlEQlyOcie6R889n2yAuQciktdEhnZaVg7gUoRJep8HRs2UwOj0miAiEE4Cqga+LJCCiEE4DR4on7ZkViNsRnZfcIsksaEHkI1SHpDogp8BS/hCISISbDDuB5gyIdvID4jbEJg53gqIGNVk4AxGP6BTSupNkENkIp5OqBrbZQp0VrCAiEZ2XusXXKohBZCM6i6uziasDtxJiEDGIsuBpbvxxFuNkYIKIQDgJ7qzDqhDtAjuIGER3IW46IIkODcQaiCMbhVXifGhjD4gohFNsdzd2yEELxDIIN4lRC/atIAexJEJNbp3FO6uYCmJJRHeDjyzEgohGdDZrqGKJu1EMRC6iswjnLuJaG0JARCLuPECAABGNeAKXVXm5jTPd9wAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Docker"><span class="post-toc-number">1.</span> <span class="post-toc-text">Docker</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker介绍"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Docker介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker的安装"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Docker的安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Windows上安装"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Windows上安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mac上安装"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Mac上安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux上安装"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">Linux上安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker的使用"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Docker的使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker-Dockerfile"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Docker Dockerfile</span></a></li></ol></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p><img src="/images/docker01-16462016137481.png"></p>
+<h2 id="Docker介绍"><a href="#Docker介绍" class="headerlink" title="Docker介绍"></a>Docker介绍</h2><p>​        Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的<a href="https://baike.baidu.com/item/%E9%95%9C%E5%83%8F/1574" target="_blank" rel="noopener">镜像</a>中，然后发布到任何流行的 <a href="https://baike.baidu.com/item/Linux" target="_blank" rel="noopener">Linux</a>或<a href="https://baike.baidu.com/item/Windows/165458" target="_blank" rel="noopener">Windows</a>操作系统的机器上，也可以实现<a href="https://baike.baidu.com/item/%E8%99%9A%E6%8B%9F%E5%8C%96/547949" target="_blank" rel="noopener">虚拟化</a>。容器是完全使用<a href="https://baike.baidu.com/item/%E6%B2%99%E7%AE%B1/393318" target="_blank" rel="noopener">沙箱</a>机制，相互之间不会有任何接口。</p>
+<h2 id="Docker的安装"><a href="#Docker的安装" class="headerlink" title="Docker的安装"></a>Docker的安装</h2><h3 id="Windows上安装"><a href="#Windows上安装" class="headerlink" title="Windows上安装"></a>Windows上安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Mac上安装"><a href="#Mac上安装" class="headerlink" title="Mac上安装"></a>Mac上安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Linux上安装"><a href="#Linux上安装" class="headerlink" title="Linux上安装"></a>Linux上安装</h3><p>首先，卸载旧版本Docker的相关文件，例如docker,，docker.io, 或 docker-engine</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure>
+
+
+
+<p>更新<code>apt</code>包索引并安装包以允许<code>apt</code>通过 HTTPS 使用存储库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install \</span><br><span class="line">     ca-certificates \</span><br><span class="line">     curl \</span><br><span class="line">     gnupg \</span><br><span class="line">     lsb-release</span><br></pre></td></tr></table></figure>
+
+
+
+<p>添加 Docker 的官方 GPG 密钥</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用以下命令设置稳定存储库。要添加 nightly或test存储库，请在以下命令中的单词之后添加单词nightly或test（或两者） </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo \</span><br><span class="line">  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span><br><span class="line"><span class="meta">  $</span><span class="bash">(lsb_release -cs) stable<span class="string">" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>安装Docker</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+
+
+<p>要安装特定版本的 Docker</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache madison docker-ce</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 09-16-44 的屏幕截图-16462016137492.png)</p>
+<p>使用第二列中的版本字符串安装特定版本，例如：5:20.10.10<del>3-0</del>ubuntu-focal</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce=&lt;VERSION_STRING&gt; docker-ce-cli=&lt;VERSION_STRING&gt; containerd.io</span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过运行映像<code>hello-world</code> 来验证 Docker 引擎是否已正确安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<p>此命令下载测试映像并在容器中运行它。当容器运行时，它会打印一条消息并退出。</p>
+<p>要升级 Docker Engine，首先运行<code>sudo apt-get update</code>，然后按照 <a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository" target="_blank" rel="noopener">安装说明</a>，选择您要安装的新版本。</p>
+<h2 id="Docker的使用"><a href="#Docker的使用" class="headerlink" title="Docker的使用"></a>Docker的使用</h2><p>直接输入 docker 命令来查看到 Docker 客户端的所有命令选项</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 09-35-10 的屏幕截图-16462016137493.png)</p>
+<p>可以通过命令 <code>docker command --help</code> 更深入的了解指定的 Docker 命令使用方法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images --help</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 10-08-15 的屏幕截图-16462016137494.png)</p>
+<p>Docker的镜像查询，也可在<a href="https://hub.docker.com/" target="_blank" rel="noopener">DockerHub</a>上查询对镜像信息</p>
+<p>![](images&#x2F;2022-02-22 10-15-57 的屏幕截图-16462016137495.png)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search ubuntu</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 10-11-31 的屏幕截图-16454959392092-16462016137496.png)</p>
+<p>获取镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:20.04</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 10-19-54 的屏幕截图-16462016137497.png)</p>
+<p>查看已有的Docker镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 11-29-21 的屏幕截图-16462016137498.png)</p>
+<p>使用镜像创建容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker \</span><br><span class="line">run \</span><br><span class="line">-it \</span><br><span class="line">--name ubuntu-20.04 \</span><br><span class="line">-v /home/Docker:/home/Docker \</span><br><span class="line">-p 10086:10086 \</span><br><span class="line">ubuntu:20.04 /bin/bash</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查看已有的容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 11-34-46 的屏幕截图-16462016137499.png)</p>
+<p>重启一个容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart ubuntu-20.04</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 11-43-16 的屏幕截图-164620161374910.png)</p>
+<p>停止一个容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop ubuntu-20.04</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 11-44-28 的屏幕截图-164620161374911.png)</p>
+<p>进入容器</p>
+<p>退出容器后容器不停止</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec ubuntu-20.04</span><br></pre></td></tr></table></figure>
+
+
+
+<p>退出容器后容器会停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach ubuntu-20.04</span><br></pre></td></tr></table></figure>
+
+
+
+<p>容器制作成镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit ubuntu-20.04 commit-ubuntu-20.04:1</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 15-40-04 的屏幕截图-164620161374912.png)</p>
+<p>镜像导出</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o commit-ubuntu-20.04.tar commit-ubuntu-20.04:1</span><br></pre></td></tr></table></figure>
+
+<p>会在当前路径下生成一个commit-ubuntu-20.04.tar文件</p>
+<p>![](images&#x2F;2022-02-22 15-46-07 的屏幕截图-164620161374913.png)</p>
+<p>可以通过<code>export</code>命令直接将容器导出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker export ubuntu-20.04 &gt; export-ubuntu-20.04.tar</span><br></pre></td></tr></table></figure>
+
+<p>![](images&#x2F;2022-02-22 15-56-44 的屏幕截图-164620161375014.png)</p>
+<p>镜像导入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load commit-ubuntu-20.04.tar</span><br></pre></td></tr></table></figure>
+
+
+
+<p>容器导入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker import export-ubuntu-20.04.tar</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Docker-Dockerfile"><a href="#Docker-Dockerfile" class="headerlink" title="Docker Dockerfile"></a>Docker Dockerfile</h2><p>Dockerfile 是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。</p>
+<p>Dockerfile指令说明简洁版：</p>
+<ul>
+<li>FROM</li>
+</ul>
+<p>构建镜像基于哪个镜像</p>
+<ul>
+<li>MAINTAINER</li>
+</ul>
+<p>镜像维护者姓名或邮箱地址</p>
+<ul>
+<li>RUN</li>
+</ul>
+<p>构建镜像时运行的指令</p>
+<ul>
+<li>CMD</li>
+</ul>
+<p>运行容器时执行的shell环境</p>
+<ul>
+<li>VOLUME</li>
+</ul>
+<p>指定容器挂载点到宿主机自动生成的目录或其他容器</p>
+<ul>
+<li>USER</li>
+</ul>
+<p>为RUN、CMD、和 ENTRYPOINT 执行命令指定运行用户</p>
+<ul>
+<li>WORKDIR</li>
+</ul>
+<p>为 RUN、CMD、ENTRYPOINT、COPY 和 ADD 设置工作目录，就是切换目录</p>
+<ul>
+<li>HEALTHCHECH</li>
+</ul>
+<p>健康检查</p>
+<ul>
+<li>ARG</li>
+</ul>
+<p>构建时指定的一些参数</p>
+<ul>
+<li>EXPOSE</li>
+</ul>
+<p>声明容器的服务端口（仅仅是声明）</p>
+<ul>
+<li>ENV</li>
+</ul>
+<p>设置容器环境变量</p>
+<ul>
+<li>ADD</li>
+</ul>
+<p>拷贝文件或目录到容器中，如果是URL或压缩包便会自动下载或自动解压</p>
+<ul>
+<li>COPY</li>
+</ul>
+<p>拷贝文件或目录到容器中，跟ADD类似，但不具备自动下载或解压的功能</p>
+<ul>
+<li>ENTRYPOINT</li>
+</ul>
+<p>运行容器时执行的shell命令</p>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2022-03-02");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2022-03-02T06:10:25.000Z" itemprop="datePublished">2022-03-02</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2022/03/02/hello-world/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Hello World</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://example.com">Hexo</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>
